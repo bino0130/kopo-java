@@ -8,36 +8,36 @@ public class PracticeNumberFive {
 
 	public static void main(String[] args) {
 		
-		try { // try catch ì¤‘ try
-			File k10_f = new File ("C:\\Users\\Bino\\test1.txt"); // Fileí´ë˜ìŠ¤ ê°ì²´ k10_f ìƒì„±
-			FileWriter k10_fw = new FileWriter(k10_f); // FileWriter í´ë˜ìŠ¤ ê°ì²´ k10_fw ìƒì„±
+		try { // try catch Áß try
+			File k10_f = new File ("C:\\Users\\Bino\\test1.txt"); // FileÅ¬·¡½º °´Ã¼ k10_f »ı¼º
+			FileWriter k10_fw = new FileWriter(k10_f); // FileWriter Å¬·¡½º °´Ã¼ k10_fw »ı¼º
 			
-			k10_fw.write("ì•ˆë…• íŒŒì¼\n"); // fwê°ì²´ í˜¸ì¶œ -> writeë©”ì„œë“œ í˜¸ì¶œí•´ì„œ parameter "ì•ˆë…• íŒŒì¼\n" ì „ë‹¬
-			k10_fw.write("hello í—¬ë¡œ\n"); // fwê°ì²´ í˜¸ì¶œ -> writeë©”ì„œë“œ í˜¸ì¶œí•´ì„œ parameter "hello í—¬ë¡œ\n" ì „ë‹¬
+			k10_fw.write("¾È³ç ÆÄÀÏ\n"); // fw°´Ã¼ È£Ãâ -> write¸Ş¼­µå È£ÃâÇØ¼­ parameter "¾È³ç ÆÄÀÏ\n" Àü´Ş
+			k10_fw.write("hello Çï·Î\n"); // fw°´Ã¼ È£Ãâ -> write¸Ş¼­µå È£ÃâÇØ¼­ parameter "hello Çï·Î\n" Àü´Ş
 			
-			k10_fw.close(); // fwê°ì²´ í˜¸ì¶œ -> close ì‹¤í–‰
+			k10_fw.close(); // fw°´Ã¼ È£Ãâ -> close ½ÇÇà
 			
-			FileReader k10_fr = new FileReader(k10_f); // FileReader í´ë˜ìŠ¤ ê°ì²´ k10_fr ìƒì„±
+			FileReader k10_fr = new FileReader(k10_f); // FileReader Å¬·¡½º °´Ã¼ k10_fr »ı¼º
 			
-			int k10_n = -1; // intíƒ€ì… ë³€ìˆ˜ n -1ë¡œ ì´ˆê¸°í™”
-			char [] k10_ch; // charíƒ€ì… ë°°ì—´ chë°°ì—´ ì„ ì–¸
+			int k10_n = -1; // intÅ¸ÀÔ º¯¼ö n -1·Î ÃÊ±âÈ­
+			char [] k10_ch; // charÅ¸ÀÔ ¹è¿­ ch¹è¿­ ¼±¾ğ
 			
-			while(true) { // ë¬´í•œë£¨í”„ ìƒì„±
-				k10_ch = new char[100]; // 100ê°œ ë‹¨ìœ„ë¡œ ì½ìŒ
-				k10_n = k10_fr.read(k10_ch); // k10_fr ê°ì²´ í˜¸ì¶œí•´ì„œ read ë©”ì„œë“œì— k10_chë¥¼ parameterë¡œ ì „ë‹¬
+			while(true) { // ¹«ÇÑ·çÇÁ »ı¼º
+				k10_ch = new char[100]; // 100°³ ´ÜÀ§·Î ÀĞÀ½
+				k10_n = k10_fr.read(k10_ch); // k10_fr °´Ã¼ È£ÃâÇØ¼­ read ¸Ş¼­µå¿¡ k10_ch¸¦ parameter·Î Àü´Ş
 				
-				if (k10_n == -1) break; // nì´ -1ì´ë©´ break
+				if (k10_n == -1) break; // nÀÌ -1ÀÌ¸é break
 				
-				for (int k10_i = 0; k10_i < k10_n; k10_i++) { // iê°€ 0ë¶€í„° 1ì”© ì¦ê°€í•˜ë©´ì„œ në³´ë‹¤ ì‘ì„ë•Œê¹Œì§€ ì‘ë™í•˜ëŠ” ë°˜ë³µë¬¸
-					System.out.printf("%c", k10_ch[k10_i]); // k10_ch[i] ì¶œë ¥
+				for (int k10_i = 0; k10_i < k10_n; k10_i++) { // i°¡ 0ºÎÅÍ 1¾¿ Áõ°¡ÇÏ¸é¼­ nº¸´Ù ÀÛÀ»¶§±îÁö ÀÛµ¿ÇÏ´Â ¹İº¹¹®
+					System.out.printf("%c", k10_ch[k10_i]); // k10_ch[i] Ãâ·Â
 				}
 			}
 			
-			k10_fr.close(); // fwê°ì²´ í˜¸ì¶œ -> closeë©”ì„œë“œ ì‹¤í–‰
+			k10_fr.close(); // fr°´Ã¼ È£Ãâ -> close¸Ş¼­µå ½ÇÇà
 			
-			System.out.printf("\nFILE READ END "); // FILE READ END ì¶œë ¥
-		} catch (Exception e) { // try catch ì¤‘ catch
-			System.out.printf("ë‚˜ ì—ëŸ¬[%s]\n", e); // ì—ëŸ¬ì— ê±¸ë¦°ë‹¤ë©´ í•´ë‹¹ ë¬¸ì¥ ì¶œë ¥
+			System.out.printf("\nFILE READ END "); // FILE READ END Ãâ·Â
+		} catch (Exception e) { // try catch Áß catch
+			System.out.printf("³ª ¿¡·¯[%s]\n", e); // ¿¡·¯¿¡ °É¸°´Ù¸é ÇØ´ç ¹®Àå Ãâ·Â
 		}
 	}
 
