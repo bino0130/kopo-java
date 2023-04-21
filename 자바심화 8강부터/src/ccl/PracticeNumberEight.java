@@ -46,46 +46,46 @@ public class PracticeNumberEight {
 		String k10_minLng = ""; // 최장거리주소 경도
 
 		try { //try catch
-			while ((k10_readtxt = k10_br.readLine()) != null) {
+			while ((k10_readtxt = k10_br.readLine()) != null) { // br에서 해당 line을 read한 값이 null이 아니면
 
-				String[] k10_field = k10_readtxt.split("\t");
+				String[] k10_field = k10_readtxt.split("\t"); // readtxt를 \t을 기준으로 나눈 String타입 배열 field 선언
 				double k10_dist = Math.sqrt(Math.pow(Double.parseDouble(k10_field[3]) - k10_lat, 2)
-						+ Math.pow(Double.parseDouble(k10_field[2]) - k10_lng, 2));
+						+ Math.pow(Double.parseDouble(k10_field[2]) - k10_lng, 2)); // 위도 경도 계산
 
-				if (k10_dist < k10_minDistance) {
+				if (k10_dist < k10_minDistance) { // 최단거리, 최단거리 주소, 최단거리 위도/경도 계산
 					k10_minDistance = k10_dist;
 					k10_nearPlace = k10_field[6];
-					k10_maxLat = k10_field[3];
-					k10_maxLng = k10_field[2];
-				}
-				if (k10_dist > k10_maxDistance) {
-					k10_maxDistance = k10_dist;
-					k10_farPlace = k10_field[6];
 					k10_minLat = k10_field[3];
 					k10_minLng = k10_field[2];
 				}
-				k10_LineCnt++;
+				if (k10_dist > k10_maxDistance) { // 최장거리, 최장거리 주소, 최장거리 위도/경도 계산
+					k10_maxDistance = k10_dist;
+					k10_farPlace = k10_field[6];
+					k10_maxLat = k10_field[3];
+					k10_maxLng = k10_field[2];
+				}
+				k10_LineCnt++; // LineCnt +1 증가
 			}
-		} catch (NumberFormatException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (NumberFormatException e) { // NumberFormatException 발생 시
+			e.printStackTrace(); // printStackTrace 호출
+		} catch (IOException e) { // IOException 발생 시
+			e.printStackTrace(); // printStackTrace 호출
 		}
 
-		System.out.println("최장 거리 :" + k10_maxDistance);
-		System.out.println("최장 거리 주소 : " + k10_farPlace);
-		System.out.println("최장거리 주소 위도 : " + k10_maxLat);
-		System.out.println("최장거리 주소 경도 : " + k10_maxLng);
-		System.out.println();
-		System.out.println("최단 거리 :" + k10_minDistance);
-		System.out.println("최단 거리 주소 : " + k10_nearPlace);
-		System.out.println("최단거리 주소 위도 : " + k10_minLat);
-		System.out.println("최단거리 주소 경도 : " + k10_minLng);
+		System.out.println("최장 거리 :" + k10_maxDistance); // 최장거리 출력
+		System.out.println("최장 거리 주소 : " + k10_farPlace); // 최장거리 주소 출력
+		System.out.println("최장거리 주소 위도 : " + k10_maxLat); // 최장거리 주소 위도 출력
+		System.out.println("최장거리 주소 경도 : " + k10_maxLng); // 최장거리 주소 경도 출력
+		System.out.println(); // 개행
+		System.out.println("최단 거리 :" + k10_minDistance); // 최단거리 출력 
+		System.out.println("최단 거리 주소 : " + k10_nearPlace); // 최단거리 주소 출력
+		System.out.println("최단거리 주소 위도 : " + k10_minLat); // 최단거리 주소 위도 출력
+		System.out.println("최단거리 주소 경도 : " + k10_minLng); // 최단거리 주소 경도 출력
 
-		try {
+		try { // try catch
 			k10_br.close(); // close
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException e) { // IOException 발생 시
+			e.printStackTrace(); // printStackTrace 호출
 		}
 	}
 
