@@ -10,7 +10,7 @@ import java.io.IOException;
 public class PracticeNumberSix {
 
 	public static void FileWrite() throws IOException {
-		File k10_f = new File("C:\\Users\\Bino\\test1.txt"); // File 함수의 객체 f 생성. user 폴더에 test1 텍스트파일 생성함
+		File k10_f = new File("C:\\Users\\Bino\\test2.txt"); // File 함수의 객체 f 생성. user 폴더에 test1 텍스트파일 생성함
 		BufferedWriter k10_bw = new BufferedWriter(new FileWriter(k10_f)); // BufferedWriter 함수의 객체 bw 생성
 		
 		k10_bw.write("안녕 파일"); // BufferedWriter 함수의 객체 bw에서 write메서드에 parameter로 "안녕 파일" 전달
