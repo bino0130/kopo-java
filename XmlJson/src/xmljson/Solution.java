@@ -45,8 +45,6 @@ public class Solution {
 			answer = 0;
 		}
 		
-		for (int i = 0; i < answerList.size(); i++) {
-			System.out.println(answerList.get(i));
-		}
+		int[] answerArr = answerList.stream().mapToInt(i -> i).toArray();
 	}
 }
