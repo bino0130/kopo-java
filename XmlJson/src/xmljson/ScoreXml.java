@@ -39,5 +39,4 @@ public class ScoreXml { // 슬라이드 9페이지
 			System.out.printf("****************************\n"); // 별찍기
 		}
 	}
-
 }
