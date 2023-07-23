@@ -1,5 +1,7 @@
 package xmljson;
 
+import java.util.Arrays;
+
 public class Solution {
 
 	public static void main(String[] args) {
@@ -12,7 +14,7 @@ public class Solution {
 //		String[] babbling = {"aya", "yee", "u", "maa"};
 		String[] babbling = {"ayaye", "uuu", "yeye", "yemawoo", "ayaayaa"};
 		
-		System.out.println(solution1(babbling));
+		System.out.println(solutions(babbling));
 	}
 	
 		public static int solution1(String[] babbling) {
@@ -66,6 +68,27 @@ public class Solution {
 //				System.out.println("b : " + b);
 				if(babbling[i].equals("")) answer++;
 			}
+			
+			return answer;
+	    }
+	    
+	    
+	    public static int solutions(String[] babbling) {
+	    	int answer = 0;
+	    	int a = 0; int b = 0;
+			String[] ongal = {"aya", "ye", "woo", "ma"};
+
+			for(int i = 0; i < babbling.length; i++) {
+				for(int j = 0; j < ongal.length; j++) {                
+					if(babbling[i].contains(ongal[j])) {
+						babbling[i] = babbling[i].replace(ongal[j], "1").trim();
+					}
+				}
+				
+			}
+			
+			int cnt = 0;
+			System.out.println(Arrays.toString(babbling));
 			
 			return answer;
 	    }
