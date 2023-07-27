@@ -1,6 +1,11 @@
 package xmljson;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class Solution {
 
@@ -12,9 +17,29 @@ public class Solution {
 //		System.out.println(solution(babbling));
 		
 //		String[] babbling = {"aya", "yee", "u", "maa"};
-		String[] babbling = {"ayaye", "uuu", "yeye", "yemawoo", "ayaayaa"};
+//		String[] babbling = {"ayaye", "uuu", "yeye", "yemawoo", "ayaayaa"};
+//		
+//		System.out.println(solutions(babbling));
 		
-		System.out.println(solutions(babbling));
+		Map<String, List<String>> map = new HashMap<String, List<String>>();
+		List<String> list = new ArrayList<String>();
+		list.add("brazil");
+		map.put("nation", list);
+		list.add("176cm");
+		map.put("height", list);
+		
+		Set<String> playersByFilter = map.keySet();
+		playersByFilter.;
+		
+		System.out.println(playersByFilter.size());
+		
+		String key = "";
+		
+		for (String key1 : map.keySet()) {
+			
+		}
+//		String height = map.get("nation=brazil").get(0);
+		System.out.println(map.get("height"));
 	}
 	
 		public static int solution1(String[] babbling) {
