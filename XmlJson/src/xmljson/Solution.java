@@ -10,16 +10,24 @@ import java.util.Set;
 public class Solution {
 
 	public static void main(String[] args) {
-		
-		System.out.println(solution(2500, 2500, 1));
+		System.out.println(solution("3x + 7 + x"));
 	}
 	
-	public static long solution(int price, long money, int count) {
-        long a = 0;
-        for(int i = 1; i <= count; i++) {
-            a += price * i;
+	public static String solution(String polynomial) {
+		String answer = "";
+        int num = 0;
+        String[] arr = polynomial.split(" ");
+        String[] xArr = new String[arr.length];
+        for(int i = 0; i < arr.length; i++) {
+            if(i % 2 == 0) {
+                if(arr[i].contains("x")) xArr[i] = arr[i];
+                else num += Integer.parseInt(arr[i]);
+            }
         }
-        return a - money;
+        for(int i = 0; i < arr.length; i++) {
+        	System.out.println(arr[i]);
+        }
+        return answer + num;
     }
 	    
 	    
